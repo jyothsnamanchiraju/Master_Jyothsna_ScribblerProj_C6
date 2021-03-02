@@ -41,6 +41,8 @@
 
 <body>
 <!-- TODO: Include all your code for the header and home page here -->
+
+<!-- Header-block begins-->
 <div id="header-block">
     <div id="title-block">
         <p id='logo'>Scribbler <br>
@@ -51,22 +53,30 @@
         <button type="button" class= "header-buttons"  data-bs-toggle="modal" data-bs-target="#signinModal" data-bs-whatever="@mdo">Sign In</button>
     </div>
 </div>
+<!-- end of Header-block-->
 
+<!-- Body-block begins-->
 <div id ="body-block">
-    <button class ="body-buttons">All Posts </button>
-    <button class ="body-buttons">Create Post </button>
+    <a href="html/blogllist.html"><button class ="body-buttons">All Posts </button> </a>
+    <button type = "button" class ="body-buttons" data-bs-toggle="modal" data-bs-target="#createpostModal" data-bs-whatever="@mdo">Create Post </button>
 </div>
+<!--end of body-block-->
 
-<!--Below is  the code for SignUp Modal  taken from bootstrap -->
+
+<!--Below is  the code for SignUp Modal taken from bootstrap -->
 <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="getStarted" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
 
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="width:120%">
+
                 <div class="modal-header">
-                    <h5 class="modal-title" id="getStarted" style="justify-content:start">Get Started</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title" id="getStarted" style="justify-content:start; ">Get Started</h3>
+                    <button type="button"  data-bs-dismiss="modal" aria-label="Close">
+                       <i class="fa fa-times" aria-hidden="true" ></i>
+                    </button>
                 </div>
+
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
@@ -86,7 +96,7 @@
                             <input type="password" class="form-control" id="password2" placeholder="Re-enter your password" required>
                         </div>
 
-                       <button type="submit" class="btn btn-primary" style="background-color:green;  color:white; justify-content:center; align-items:center;">Sign Up</button>
+                       <button type="submit" class="btn btn-primary" style="background-color:green;  color:white; justify-content:center; width:100%">Sign Up</button>
 
                     </form>
                 </div>
@@ -99,14 +109,16 @@
 <!--End of SignUp Modal  -->
 
 <!-- Below is the code for signin modal -->
-<div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="getStarted" aria-hidden="true">
+<div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="welcomeback" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
 
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="width:120%">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="welcomeback" style="justify-content:start">Welcome Back!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title" id="welcomeback" style="justify-content:start">Welcome Back!</h3>
+                    <button type="button"  data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times" aria-hidden="true" ></i>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -119,9 +131,9 @@
                             <input type="password" class="form-control" id="password1" placeholder="Enter your password" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="background-color:green;  color:white; justify-content:center; align-items:center;">Sign In</button>
-                        <div>
-                            <h6>Not a member?</h6> <a onclick='closesigninmodal()' data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-whatever="@mdo"> Sign Up</a>
+                        <button type="submit" class="btn btn-primary" style="background-color:green;  color:white; justify-content:center; width:100%">Sign In</button> <br>
+                        <div style="padding:5px; margin: 5px ">
+                            <span>Not a member?</span> <a href=""   onclick='closesigninmodal()' data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-whatever="@mdo">  Sign Up  </a>
                         </div>
                     </form>
                 </div>
@@ -132,6 +144,43 @@
 </div>
 
 <!-- end of signin modal -->
+
+
+<!-- Below is the code for Create Post modal -->
+<div class="modal fade" id="createpostModal" tabindex="-1" aria-labelledby="penyourpost" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-dialog" style="width:500%;">
+            <div class="modal-content"  style="width:100%">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="penyourpost" style="justify-content:start">Pen Your Post</h3>
+                    <button type="button"  data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times" aria-hidden="true" ></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="posttitle" class="col-form-label">Title</label>
+                            <input type="text" class="form-control" id="posttitle" placeholder="Enter title of your post" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="postcontent" class="col-form-label">Contents</label>
+                            <textarea type="text" rows = 15 cols = 20 class="form-control" id="postcontent" placeholder="Enter the contents of your post" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="background-color:green; color:white; width:100% ">Create</button> <br>
+
+                    </form>
+                </div>
+
+             </div>
+        </div>
+    </div>
+</div>
+
+<!-- end of Create Post modal -->
+
 
 
 </body>
