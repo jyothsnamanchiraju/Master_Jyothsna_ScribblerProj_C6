@@ -59,7 +59,7 @@ function createModalHeader(num){
     }
     else {
         modalname = 'signinModal';
-        title = 'Welcome back!';
+        title = 'Welcome Back!';
     }
 
     var modalHeader = '<div class=\"modal fade\" id=\"'+ modalname +'\" tabindex=\"-1\" aria-labelledby=\"getStarted\" aria-hidden=\"true\">'+
