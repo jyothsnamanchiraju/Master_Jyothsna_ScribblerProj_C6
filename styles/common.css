@@ -1,0 +1,42 @@
+/*Styling for the header to include Logo, tag-line, Sign In  and Sign Up buttons.*/
+#header-block{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+}
+
+#title-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width:20%;
+}
+
+#logo{
+    margin:0 ;
+    font-family: 'Montez', cursive;
+    color: blue;
+    font-size: 40px;
+}
+#tag-line{
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+    margin:0;
+}
+
+#buttons-block{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: -webkit-fill-available;
+    margin:0 ;
+}
+.header-buttons{
+    background-color: blue;
+    color: white;
+    margin: 10px;
+    padding: 4px;
+    width: 125px;
+}
