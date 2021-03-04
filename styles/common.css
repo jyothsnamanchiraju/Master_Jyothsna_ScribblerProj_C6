@@ -28,7 +28,7 @@
 #buttons-block{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: baseline;
     justify-content: flex-end;
     width: -webkit-fill-available;
     margin:0 ;
