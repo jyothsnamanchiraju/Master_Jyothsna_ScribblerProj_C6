@@ -1,4 +1,6 @@
-/*arrayofposts();
+function generatebodyblock() {
+    arrayofposts();
+}
 
 function arrayofposts(){
     var arrofposts = [
@@ -10,7 +12,7 @@ function arrayofposts(){
         {   //p2
             username: 'Colby Fayock',
             ptitle: 'What is linting and how can it save you time?',
-            pmatter: 'One of the biggest challenges in software development is time. It’s something we can’t easily get more of, but linting can help us make the most out of the time we have.'
+            pmatter: 'One of the biggest challenges in software development is time. It&#39;s something we can&#39;t easily get more of, but linting can help us make the most out of the time we have.'
         },
         {   //p3
             username: 'Yazeed Bzadough',
@@ -35,11 +37,13 @@ function arrayofposts(){
 
     //createbodyblock(username, title, matter)
     arrofposts.forEach(function (value, index){
+   //     console.log(value.username+" - "+value.ptitle+" -- "+value.pmatter);
         var pbox = generatepostbox(value.username, value.ptitle, value.pmatter);
-        //  document.getElementById('body-block').innerHTML += pbox;
-        var newelement = document.createElement('div');
-        newelement.innerHTML= pbox;
-        document.getElementById('body-block').appendChild(newelement);
+        console.log(pbox);
+        document.getElementById('body-block').innerHTML += pbox;
+      //  var newelement = document.createElement('div');
+      //  newelement.innerHTML= pbox;
+      //  document.getElementById('body-block').appendChild(newelement);
     });
 }
 
@@ -64,4 +68,4 @@ function generatepostbox(username, title, matter) {
         '</div>';
 
     return postbox;
-} */
+}

@@ -1,12 +1,10 @@
+
 #body-block{
     display: grid;
-    grid-gap: 80px;
-    /* grid-column: 2; */
     grid-template-columns: auto auto;
-    grid-column-gap: 100px;
-    /* flex-direction: column; */
+    grid-gap:20px;
     height: 90vh;
-    justify-content: space-between;
+    align-items:center;
     overflow: scroll;
 }
 .post-box{
