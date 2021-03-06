@@ -45,8 +45,8 @@
     height:20%; width:100%;
     align-items:center;
     justify-content:center;
-    content-visibility: auto;
     padding:10px;
+    overflow: auto;
 }
 .title{
     width:90%;
@@ -55,7 +55,6 @@
 .trash-btn{
     width:10%;
     justify-content:center;
-
 }
 .post-matter{
     height:80%;

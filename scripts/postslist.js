@@ -1,3 +1,5 @@
+
+//The given posts are stored as elements of an array
 var arrofposts = [
     {   //p1
         uid:'p1',
@@ -35,6 +37,9 @@ var arrofposts = [
     }
 ];
 
+var deluid = ''; //variable carries the id of post to be deleted
+
+//below function generates body-block
 function generatebodyblock() {
     loadpostboxes();
 
@@ -43,6 +48,7 @@ function generatebodyblock() {
     });
 }
 
+//creates a post-box for each post-element that is stored in the array.
 function loadpostboxes(){
 
     arrofposts.forEach(function (value, index){
@@ -51,7 +57,9 @@ function loadpostboxes(){
     });
 }
 
+//generating the post-box
 function generatepostbox(uid, username, title, matter) {
+    var pboxid = uid;
 
     var postbox ='<div class = \"post-box\" id=\"'+uid+'\">' +
         '<div class=\"username\" id=\"username\">' +
@@ -60,22 +68,25 @@ function generatepostbox(uid, username, title, matter) {
         '<div class=\"post-content\">' +
         '<div class=\"post-title-bar\">' +
         '<p class=\"title\" id=\"ptitle\">'+ title +'</p>'+
-        '<button class=\"trash-btn\"> <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> </button>'+
+        '<button type=\"button\" id=\"'+uid+'\" onclick=\"dsplmodal(&#39;'+pboxid+'&#39;)\"  class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#confirmdelmodal\" data-bs-whatever=\"@mdo\">'+
+        '<i class=\"fa fa-trash\" aria-hidden=\"true\" style=\"width:10%;justify-content:center;\"></i>'+
+        '</button>'+
         '</div>' +
         '<div class=\"post-matter\">' +
         '<p>' + matter +'</p>'+
         '</div>' +
+        '<a href=\"post.html\">'+
         '<button class=\"cont-btn\" style=\"justify-content:flex-end;\">'+
         '<i class=\"fa fa-ellipsis-h\" aria-hidden=\"true\"></i>'+
         '</button>' +
+        '</a>' +
         '</div>' +
         '</div>';
 
     return postbox;
 }
 
-
-
+// highlighting the post-box when the mouse pointer hovers
 function pboxEvent(uid){
     document.getElementById(uid).addEventListener('mouseover', function(){
         document.getElementById(uid).setAttribute('style',' box-shadow: 5px 5px 20px 5px blue; cursor: pointer');
@@ -86,3 +97,18 @@ function pboxEvent(uid){
     });
 }
 
+/*
+function genModalDelete() {
+document.getElementById('deleteconfirmation').setAttribute('style','display:block');
+}*/
+
+//deleteing the post from the screen.
+function deletepost(){
+    document.getElementById(deluid).setAttribute('style','display:none');
+}
+
+//below method is invoked when the tras-button on post-box is clicked
+//setting the id of the post-box to be deleted.
+function dsplmodal(uid){
+    deluid = uid;
+}
