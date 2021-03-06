@@ -1,3 +1,21 @@
+function createheaderblock(){
+
+    var Hblock= '<div id=\"title-block\">' +
+        '<p id=\"logo\">Scribbler <br>'+
+        '<p id=\"tag-line\">Explore, Imagine, Create</p>'+
+        '</div>'+
+        '<div id=\"buttons-block\">'+
+        '<button type=\"button\" id =\"signup-btn\" class =\"header-buttons\" onclick=\"invokesignupmodal(0)\">Sign Up</button>'+
+        '<button type=\"button\" id =\"signin-btn\" class =\"header-buttons\" onclick=\"invokesigninmodal()\">Sign In</button>'+
+        '</div>';
+
+//var helement = document.createElement('div');
+//helement.innerHTML = Hblock;
+//document.getElementById('header-block').appendChild(helement);
+    document.getElementById('header-block').innerHTML = Hblock;
+}
+
+
 function invokesignupmodal(num){
 
     if(num===1)
