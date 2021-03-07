@@ -22,6 +22,7 @@ function invokesignupmodal(num){
 //The sign-n modal needs to be closed before opening the signup-modal
     if(num===1){
         document.getElementById('signinModal').setAttribute('style','display:none');
+        document.getElementsByClassName('modal-backdrop fade show')[0].setAttribute('style', 'display:none');
     }
 
 
