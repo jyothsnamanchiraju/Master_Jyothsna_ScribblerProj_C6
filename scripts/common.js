@@ -1,3 +1,4 @@
+//creates the header block
 function createheaderblock(){
 
     var Hblock= '<div id=\"title-block\">' +
@@ -9,35 +10,38 @@ function createheaderblock(){
         '<button type=\"button\" id =\"signin-btn\" class =\"header-buttons\" onclick=\"invokesigninmodal()\">Sign In</button>'+
         '</div>';
 
-//var helement = document.createElement('div');
-//helement.innerHTML = Hblock;
-//document.getElementById('header-block').appendChild(helement);
     document.getElementById('header-block').innerHTML = Hblock;
+    document.getElementById('signup-btn').addEventListener("click",invokesignupmodal(0));
+    document.getElementById('signin-btn').addEventListener("click",invokesigninmodal());
 }
 
-
+//invokes the signup modal
 function invokesignupmodal(num){
 
-    if(num===1)
+//variable num === 1 indicates that the signup-modal has been invoked from the signin-modal
+//The sign-n modal needs to be closed before opening the signup-modal
+    if(num===1){
         document.getElementById('signinModal').setAttribute('style','display:none');
+    }
+
 
     document.getElementById('signup-btn').setAttribute('data-bs-toggle','modal');
     document.getElementById('signup-btn').setAttribute('data-bs-target','#signupModal');
     document.getElementById('signup-btn').setAttribute('data-bs-whatever','@mdo');
 
     var modalHeader = createModalHeader(1);
-    var signupForm= createSignupForm();
+    var signupForm = createSignupForm();
     var modalFooter = createModalFooter();
 
 
     var signupModalElement =document.createElement('div');
     signupModalElement.innerHTML= modalHeader + signupForm +modalFooter;
 
-    document.getElementsByTagName('body')[0].appendChild(signupModalElement);
+   document.getElementsByTagName('body')[0].appendChild(signupModalElement);
 
 }
 
-
+//creates the signup-form
 function createSignupForm(){
 
     var signupForm =   '<div class=\"modal-body\">'  +
@@ -67,10 +71,15 @@ function createSignupForm(){
 }
 
 
-
+//creates the header content for the modal
 function createModalHeader(num){
     var modalname;
     var title;
+
+    //num is an indicator-flag.
+    //num===1, used to generate modal for Sign-up
+    //else will generate modal for sign-in
+
     if(num===1) {
         modalname = 'signupModal';
         title = 'Get Started';
@@ -86,7 +95,7 @@ function createModalHeader(num){
         '<div class=\"modal-content\" style=\"width:120%\">'+
         '<div class=\"modal-header\">'+
         '<h3 class=\"modal-title\" id=\"header-title\" style=\"justify-content:start;\">'+title+'</h3>'+
-        '<button type=\"button\"  data-bs-dismiss=\"modal\" aria-label=\"Close\">'+
+        '<button id=\"close-btn\" type=\"button\" data-bs-dismiss=\"modal\" aria-label=\"Close\">'+
         '<i class=\"fa fa-times\" aria-hidden=\"true\" ></i>'+
         '</button>'+
         '</div>';
@@ -94,7 +103,12 @@ function createModalHeader(num){
     return modalHeader;
 }
 
+/*
+function removemod(){
+  console.log("Under the remove modal method");
+}*/
 
+//creates the footer content for the modal
 function createModalFooter(){
     var modalFooter = '</div>'+
         '</div>'+
@@ -104,6 +118,7 @@ function createModalFooter(){
     return modalFooter;
 }
 
+//invokes the signin modal
 function invokesigninmodal(){
     document.getElementById('signin-btn').setAttribute('data-bs-toggle','modal');
     document.getElementById('signin-btn').setAttribute('data-bs-target','#signinModal');
@@ -121,7 +136,7 @@ function invokesigninmodal(){
 }
 
 
-
+//creates the signin form
 function createSigninForm(){
 
     var signinForm = '<div class=\"modal-body\">' +
