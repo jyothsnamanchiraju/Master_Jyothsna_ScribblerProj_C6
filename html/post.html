@@ -28,7 +28,7 @@
 
 </head>
 
-<body onload="createheaderblock()">
+<body onload="createheaderblock(); displayPostContent();">
 <!-- TODO: Include all your code for the header and home page here -->
 
 <!-- Header-block begins-->
@@ -39,34 +39,7 @@
 
 <!-- body-block begins-->
 <div id="post-body-block">
-    <div id="post-title">
-        <p>Post - Title</p>
-    </div>
-    <div id="user-edit-btn">
-        <p>User Name</p>
-        <button id="edit-btn" type="button">
-            Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        </button>
-    </div>
-    <div id="post-content">
-        <textarea id="edit-post-content"></textarea>
-        <p id="post-content-block" style="word-break: break-all;">Unless explicitly mentioned otherwise (for example, at some places, it might be mentioned that a certain button MUST be red in color), you can customize your own CSS for any HTML element you want. However, please keep in mind that the overall appearance of any HTML page must be similar (if not identical) to the outcome of the screen mentioned prior to each part of the assignment. This means that if certain elements are placed towards the top-right part of the screen in the final outcome figure, then they MUST be placed at the top-right corner ONLY. Failing to do so will lead to deduction of marks. Note that there might be multiple ways in which a certain CSS effect can be achieved. So the exact syntax of the CSS code does not matter, but the overall appearance of any given page must be similar to the expected outcome.</p>
-    </div>
-    <div style="display:flex; flex-direction:column; align-items:flex-start;">
-        <button type="button" id="like-btn">
-            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like </button>
-        <p id="like-btn-tag-line">
-            1 person likes this!</p>
-        <textarea type="text" rows=3 cols=150 id="comment-txt" placeholder="Leave a comment...">
-        </textarea>
-        <button type="button" id="comment-btn">
-            Comment</button>
-        <h6>All Comments</h6>
-        <div id="comment-list">
-            <p id="comment-box">
-                Comment1 </p>
-        </div>
-    </div>
+    <!--refer to post.js, displayPostContent() function for the content -->
 </div>
 <!-- end of body-block-->
 

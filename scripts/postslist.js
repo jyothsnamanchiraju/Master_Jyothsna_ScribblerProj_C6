@@ -75,7 +75,7 @@ function generatepostbox(uid, username, title, matter) {
         '<div class=\"post-matter\">' +
         '<p>' + matter +'</p>'+
         '</div>' +
-        '<a href=\"post.html\">'+
+        '<a onclick=\"updateLocalStorage(&#39;'+uid+'&#39;)\" href=\"post.html\">'+
         '<button class=\"cont-btn\" style=\"justify-content:flex-end;\">'+
         '<i class=\"fa fa-ellipsis-h\" aria-hidden=\"true\"></i>'+
         '</button>' +
@@ -111,4 +111,20 @@ function deletepost(){
 //setting the id of the post-box to be deleted.
 function dsplmodal(uid){
     deluid = uid;
+}
+
+//below function is called when the post is clicked for more details.
+//the details of the post are stored in the localStorage which will then be retrieved by
+//the code in post.js
+function updateLocalStorage(uid1){
+    var pcontent;
+
+    arrofposts.forEach(function (value, index) {
+        if(uid1 === value.uid) {
+            pcontent = value.uid + " :$% " + value.username + " :$% " + value.ptitle + " :$% " + value.pmatter;
+            console.log("inside for loop "+pcontent);
+        }
+    });
+
+    localStorage.setItem("postcontent", pcontent);
 }
