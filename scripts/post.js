@@ -51,9 +51,10 @@ function generatepostcontent(num){
                     '</div>'+
                     '</div>';
 
+var liketxt= 'Like';
 var likesection=   '<div style=\"display:flex; flex-direction:column; align-items:flex-start;\">'+
                             '<button type=\"button\" id=\"like-btn\" onclick=\"updatelikes()\">'+
-                            '<i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i> Like </button>'+
+                            '<i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i>'+ liketxt +' </button>'+
                             '<p id=\"like-btn-tag-line\">'+ likecount+" "+likebtntagline +'</p>'+
                             '<textarea type=\"text\" rows=3 cols=150 id=\"comment-txt\" placeholder=\"Leave a comment...\">'+
                             '</textarea>'+
@@ -109,9 +110,11 @@ function updatelikes(){
     likecount = likecount+1;
 
     if (likecount ==1)
-        likebtntagline= 'person likes this';
+        likebtntagline= 'person likes this!';
     else
-        likebtntagline= 'persons like this';
+        likebtntagline= 'persons like this!';
+
+   document.getElementById('like-btn').innerHTML =  '<i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i>'+ 'Liked' +' </button>';
 
     document.getElementById('like-btn-tag-line').innerHTML = likecount+" "+likebtntagline;
 }
