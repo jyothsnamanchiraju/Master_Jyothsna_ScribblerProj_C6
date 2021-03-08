@@ -18,7 +18,7 @@
     width:100%;
     height:auto;
 }
-#edit-post-content{
+.edit-post-content{
     word-break: break-all;
     width: 100%;
     height:30%;
@@ -27,6 +27,11 @@
 }
 #like-btn{
     margin:10px 10px 5px 0px; padding:5px; width:70px; background-color:#D1336F; color:white;
+}
+
+#save-btn{
+    margin:10px 10px 5px 0px; padding:5px; width:70px; background-color:#D1336F; color:white;
+    display:none;
 }
 
 #like-btn-tag-line{
@@ -39,6 +44,10 @@
 #comment-btn{
     margin:10px 10px 10px 0px; padding:5px; width:90px; background-color:#D1336F; color:white;
 }
-#comment-box{
-    height:40px; width:1080px; margin:15px 15px 15px 0px; padding:5px 5px 5px 5px; color:black; BORDER: double; BORDER-BLOCK-COLOR:#E1DCDE;
+.comment-box{
+    height:40px; width:1080px; margin:15px 15px 15px 15px; padding:5px 5px 5px 5px; color:black; BORDER: double;
+    background-color: white;
+}
+#comment-list{
+    background-color: #E1DCDE;
 }
