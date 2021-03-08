@@ -102,6 +102,10 @@ function savepostmatter(){
     document.getElementById('edit-btn').setAttribute('style','display:block');
     document.getElementById('post-content-block').setAttribute('style','display:block');
 
+
+    var pcontent = pid + " :$% " + usrname + " :$% " + psttitle + " :$% " + pstmatter;
+    localStorage.setItem("postcontent", pcontent);
+
     generatepostcontent(1);
 }
 
